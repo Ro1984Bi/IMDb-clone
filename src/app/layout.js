@@ -1,14 +1,24 @@
+import Header from '@/components/Header'
+import Provider from './Provider'
 import './globals.css'
+import Nav from '@/components/Nav'
+import SearchBar from '@/components/SearchBar'
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
+  
       <head />
-      <body>{children}</body>
+      <body>
+        <Provider>   
+        <Header />
+        <Nav />
+        <SearchBar />
+        
+        
+        {children}
+        </Provider>
+        </body>
     </html>
   )
 }
